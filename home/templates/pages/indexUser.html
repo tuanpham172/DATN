@@ -1,0 +1,274 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <!-- load file static -->
+  {% load staticfiles %}
+  <title>MovieHunter</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="{% static 'cssNbBased/style1.css' %}"/>
+  <script type="text/javascript" src="{% static 'js/jquery-1.4.2.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/jquery-func.js' %}"></script>
+  <!-- <script language="javascript">
+    function load_ajax(){
+      $.ajax({
+        type: 'GET', 
+    url: 'http://localhost:8000/home/recommend/', 
+    dataType: 'json',
+    success: function (data) { 
+        console.log('dasdasdas'); // do anything you want with your parsed data
+    }
+      });
+  }
+  </script> -->
+
+</head>
+<style>
+  
+</style>
+<body>
+  <!-- START PAGE SOURCE -->
+  {% load class_tag %}
+  <div id="shell">
+    <div id="header">
+      <h1 id="logo"><a href="#">MovieHunter</a></h1>
+      <div class="social"> <span>FOLLOW US ON:</span>
+        <ul>
+          <li><a class="twitter" href="#">twitter</a></li>
+          <li><a class="facebook" href="#">facebook</a></li>
+          <li><a class="vimeo" href="#">vimeo</a></li>
+          <li><a class="rss" href="#">rss</a></li>
+        </ul>
+      </div>
+      <div id="navigation">
+        <ul>
+          <li><a class="active" href="{% url 'home:HOME' %}">HOME</a></li>
+          <li><a href="#">NEWS</a></li>
+          <li><a href="#">IN THEATERS</a></li>
+          <li><a href="#">COMING SOON</a></li>
+          <li><a href="#">CONTACT</a></li>
+          <li><a href="#">ADVERTISE</a></li>
+        </ul>
+      </div>
+      <div id="sub-navigation">
+        <ul>
+          <li><a href="#">SHOW ALL</a></li>
+          <li><a href="#">LATEST TRAILERS</a></li>
+          <li><a href="#">TOP RATED</a></li>
+          <li><a href="#">MOST COMMENTED</a></li>
+        </ul>
+     
+      </div>
+    </div>
+    <div id="main">     
+      <div id="content">
+        <div class="box">
+          <div class="head">
+            <h2>LATEST TRAILERS</h2>
+            <p class="text-right"><a href="#">See all</a></p>
+          </div>
+          <div class="movie">
+                <div class="movie-image"> <span class="play"><span class="name">X-MAN</span></span> <a href="#"><img src="{% static 'images/movie5.jpg' %}" alt="" /></a> </div>
+                <div class="rating">
+                  <p>RATING</p>
+                  <div class="stars">
+                    <div class="stars-in"> </div>
+                  </div>
+                  <span class="comments">12</span> </div>
+              </div>
+              <div class="movie">
+                    <div class="movie-image"> <span class="play"><span class="name">X-MAN</span></span> <a href="#"><img src="{% static 'images/movie4.jpg' %}" alt="" /></a> </div>
+                    <div class="rating">
+                      <p>RATING</p>
+                      <div class="stars">
+                        <div class="stars-in"> </div>
+                      </div>
+                      <span class="comments">12</span> </div>
+                  </div>
+                  <div class="movie">
+                        <div class="movie-image"> <span class="play"><span class="name">X-MAN</span></span> <a href="#"><img src="{% static 'images/movie3.jpg' %}" alt="" /></a> </div>
+                        <div class="rating">
+                          <p>RATING</p>
+                          <div class="stars">
+                            <div class="stars-in"> </div>
+                          </div>
+                          <span class="comments">12</span> </div>
+                      </div>
+                      <div class="movie">
+                            <div class="movie-image"> <span class="play"><span class="name">X-MAN</span></span> <a href="#"><img src="{% static 'images/movie2.jpg' %}" alt="" /></a> </div>
+                            <div class="rating">
+                              <p>RATING</p>
+                              <div class="stars">
+                                <div class="stars-in"> </div>
+                              </div>
+                              <span class="comments">12</span> </div>
+                          </div>
+                          <div class="movie">
+                                <div class="movie-image"> <span class="play"><span class="name">X-MAN</span></span> <a href="#"><img src="{% static 'images/movie1.jpg' %}" alt="" /></a> </div>
+                                <div class="rating">
+                                  <p>RATING</p>
+                                  <div class="stars">
+                                    <div class="stars-in"> </div>
+                                  </div>
+                                  <span class="comments">12</span> </div>
+                              </div>
+                              <div class="movie last">
+                                    <div class="movie-image"> <span class="play"><span class="name">ICE AGE</span></span> <a href="#"><img src="{% static 'images/movie6.jpg' %}" alt="" /></a> </div>
+                                    <div class="rating">
+                                      <p>RATING</p>
+                                      <div class="stars">
+                                        <div class="stars-in"> </div>
+                                      </div>
+                                      <span class="comments">12</span> </div>
+                                  </div>
+                                 <!-- -----
+                                  <div class="box">
+                                        <div class="head">
+                                                <h2 style="font-size:20px;">PHIM ĐƯỢC ĐỀ XUẤT CHO BẠN </h2>
+                                                <p class="text-right"><a href="#">See all</a></p>
+                                              </div>
+                        {% for key,value in json_context.items %}
+                        {% if value|get_type == "<class 'list'>" %}
+                                {% for v  in value %}
+                        <div class="movie">
+                               
+                            <div class="movie-image"> <span class="play"><span class="name">{{ v }}</span></span><img src="{% static 'images/rcm.jpg' %}" alt="" /> <a href="#"></a> </div> 
+                       
+                            <div class="rating">
+                            <p>RATING</p>
+                            <div class="stars">
+                                <div class="stars-in"> </div>
+                            </div>
+                            <span class="comments">12</span> </div>
+                        
+                            
+                        </div>
+          {% endfor %}
+          {% endif %}
+          {% endfor %}
+        </div>
+        ---- -->
+      
+                <div class="head">
+                        <h2 style="font-size:20px;">PHIM ĐƯỢC ĐỀ XUẤT 5* CHO BẠN </h2>
+                        <p class="text-right"><a href="#">See all</a></p>
+                      </div>
+                    
+                      
+                      {% get_date_filter json_context.referenceDate_5star ">" 1995 as year_selected_list %}	
+                      {% get_elements4 json_context.reference_5star year_selected_list 10 as url_5star %}
+                      {% get_elements4 json_context.referenceImg_5star year_selected_list 10 as img_5star %}
+                      {% get_elements4 json_context.referenceDate_5star year_selected_list 10 as date_5star %}
+                      {% for title_url, url in url_5star.items %}
+                      {% for title_img, img in img_5star.items %}
+                      {% for title_date, date in date_5star.items %}
+                  
+                      {% if title_url == title_img %}
+                      {% if title_url == title_date  %}
+                <div class="movie">
+        
+                    <div class="movie-image "> <span class="play"><span class="name">{{ title_url }}</span></span><img src="{{img}}" alt="" /> <a href="{{url}}"></a> </div> 
+               
+                    <div class="rating">
+                    <p>RATING</p>
+                    <div class="stars">
+                        <div class="stars-in"> </div>
+                    </div>
+                    <span class="comments">{{date}}</span> </div>
+
+                    
+                </div>
+                {% endif %}
+						  	{% endif %}
+						  	{% endfor %}
+						  	{% endfor %}
+						  	{% endfor %}
+
+                <div class="head" style="clear: both;">
+                  <h2 style="font-size:20px;">PHIM ĐƯỢC ĐỀ XUẤT 4* CHO BẠN </h2>
+                  <p class="text-right"><a href="#">See all</a></p>
+                </div>
+              
+                <div class="layout">
+                {% get_date_filter json_context.referenceDate_4star ">" 1995 as year_selected_list %}	
+                {% get_elements4 json_context.reference_4star year_selected_list 10 as url_4star %}
+                {% get_elements4 json_context.referenceImg_4star year_selected_list 10 as img_4star %}
+                {% get_elements4 json_context.referenceDate_4star year_selected_list 10 as date_4star %}
+                {% for title_url, url in url_4star.items %}
+                {% for title_img, img in img_4star.items %}
+                {% for title_date, date in date_4star.items %}
+            
+                {% if title_url == title_img %}
+                {% if title_url == title_date  %}
+          <div class="movie">
+  
+              <div class="movie-image "> <span class="play"><span class="name">{{ title_url }}</span></span><img src="{{img}}" alt="" /> <a href="{{url}}"></a> </div> 
+         
+              <div class="rating">
+              <p>RATING</p>
+              <div class="stars">
+                  <div class="stars-in"> </div>
+              </div>
+              <span class="comments">{{date}}</span> </div>
+
+              
+          </div>
+          {% endif %}
+          {% endif %}
+          {% endfor %}
+          {% endfor %}
+          {% endfor %}
+        </div>
+ 
+
+                  <div class="head" style="clear:both">
+                    <h2 style="font-size:20px;">PHIM ĐƯỢC ĐỀ XUẤT 3* CHO BẠN </h2>
+                    <p class="text-right"><a href="#">See all</a></p>
+                  </div>
+                
+                  {% get_date_filter json_context.referenceDate_3star ">" 1995 as year_selected_list %}	
+                {% get_elements4 json_context.reference_3star year_selected_list 10 as url_3star %}
+                {% get_elements4 json_context.referenceImg_3star year_selected_list 10 as img_3star %}
+                {% get_elements4 json_context.referenceDate_3star year_selected_list 10 as date_3star %}
+                {% for title_url, url in url_3star.items %}
+                {% for title_img, img in img_3star.items %}
+                {% for title_date, date in date_3star.items %}
+            
+                {% if title_url == title_img %}
+                {% if title_url == title_date  %}
+          <div class="movie">
+  
+              <div class="movie-image "> <span class="play"><span class="name">{{ title_url }}</span></span><img src="{{img}}" alt="" /> <a href="{{url}}"></a> </div> 
+         
+              <div class="rating">
+              <p>RATING</p>
+              <div class="stars">
+                  <div class="stars-in"> </div>
+              </div>
+              <span class="comments">{{date}}</span> </div>
+
+              
+          </div>
+          {% endif %}
+          {% endif %}
+          {% endfor %}
+          {% endfor %}
+          {% endfor %}
+
+          <div class="cl">&nbsp;</div>
+        </div>
+        
+        
+      </div>
+      
+     
+      <div class="cl">&nbsp;</div>
+    </div>
+   
+  </div>
+  
+  <!-- END PAGE SOURCE -->
+  </body>
+  
+
+</html>
+
